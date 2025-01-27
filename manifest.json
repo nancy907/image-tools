@@ -2,18 +2,18 @@
     "name": "在线图片工具集",
     "short_name": "图片工具",
     "description": "免费的在线图片处理工具，支持压缩、裁剪、格式转换、水印等功能",
-    "start_url": "/",
+    "start_url": "/image-tools/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#2563eb",
     "icons": [
         {
-            "src": "favicon.svg",
+            "src": "/image-tools/favicon.svg",
             "sizes": "32x32",
             "type": "image/svg+xml"
         },
         {
-            "src": "apple-touch-icon.png",
+            "src": "/image-tools/apple-touch-icon.png",
             "sizes": "180x180",
             "type": "image/png"
         }
