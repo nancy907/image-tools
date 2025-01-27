@@ -1,0 +1,107 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 全局变量 */
+:root {
+    --primary-color: #0071E3;
+    --text-primary: #1D1D1F;
+    --text-secondary: #86868B;
+    --background-color: #F5F5F7;
+    --white: #FFFFFF;
+    --border-color: #E5E5E5;
+    --border-radius-lg: 16px;
+    --border-radius-md: 8px;
+    --border-radius-sm: 4px;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 基础样式 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* 容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 顶部导航栏 */
+.header {
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.nav {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* 主要内容区域 */
+.main {
+    margin-top: 64px;
+    padding: 40px 0;
+}
+
+/* 按钮样式 */
+.button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 24px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+/* 输入框样式 */
+.input {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 12px 16px;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+}
+
+.input:focus {
+    border-color: var(--primary-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .nav {
+        padding: 0 16px;
+    }
+} 

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="1440" height="900" fill="#F5F5F7"/>
+    
+    <!-- 顶部导航栏 -->
+    <rect x="0" y="0" width="1440" height="64" fill="white" filter="url(#shadow)"/>
+    <text x="48" y="40" font-family="SF Pro Display" font-size="24" fill="#000000">工具集</text>
+    
+    <!-- 主要内容区域 -->
+    <g transform="translate(120, 120)">
+        <!-- 标题 -->
+        <text x="0" y="0" font-family="SF Pro Display" font-size="48" fill="#1D1D1F">图片水印</text>
+        <text x="0" y="40" font-family="SF Pro Display" font-size="20" fill="#86868B">为图片添加自定义水印</text>
+        
+        <!-- 编辑区域 -->
+        <g transform="translate(0, 100)">
+            <!-- 主图片预览区 -->
+            <rect x="0" y="0" width="800" height="500" rx="16" fill="white" stroke="#E5E5E5"/>
+            
+            <!-- 水印示例 -->
+            <g transform="translate(300, 200)" opacity="0.5">
+                <text x="0" y="0" font-family="SF Pro Display" font-size="24" fill="#000000" transform="rotate(-30)">示例水印文字</text>
+            </g>
+        </g>
+        
+        <!-- 水印设置面板 -->
+        <g transform="translate(840, 100)">
+            <rect x="0" y="0" width="360" height="500" rx="16" fill="white" stroke="#E5E5E5"/>
+            
+            <!-- 水印类型选择 -->
+            <g transform="translate(24, 24)">
+                <text x="0" y="0" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">水印类型</text>
+                <g transform="translate(0, 20)">
+                    <rect x="0" y="0" width="312" height="48" rx="24" fill="#F5F5F7"/>
+                    <g transform="translate(8, 8)">
+                        <rect x="0" y="0" width="148" height="32" rx="16" fill="#0071E3"/>
+                        <text x="74" y="20" font-family="SF Pro Display" font-size="14" fill="white" text-anchor="middle">文字水印</text>
+                        <text x="222" y="20" font-family="SF Pro Display" font-size="14" fill="#1D1D1F" text-anchor="middle">图片水印</text>
+                    </g>
+                </g>
+            </g>
+            
+            <!-- 水印文字输入 -->
+            <g transform="translate(24, 120)">
+                <text x="0" y="0" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">水印文字</text>
+                <rect x="0" y="20" width="312" height="48" rx="8" fill="white" stroke="#E5E5E5"/>
+                <text x="16" y="48" font-family="SF Pro Display" font-size="14" fill="#1D1D1F">示例水印文字</text>
+            </g>
+            
+            <!-- 字体设置 -->
+            <g transform="translate(24, 200)">
+                <text x="0" y="0" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">字体设置</text>
+                <rect x="0" y="20" width="200" height="48" rx="8" fill="white" stroke="#E5E5E5"/>
+                <text x="16" y="48" font-family="SF Pro Display" font-size="14" fill="#1D1D1F">SF Pro Display</text>
+                
+                <!-- 字号选择 -->
+                <rect x="220" y="20" width="92" height="48" rx="8" fill="white" stroke="#E5E5E5"/>
+                <text x="236" y="48" font-family="SF Pro Display" font-size="14" fill="#1D1D1F">24px</text>
+            </g>
+            
+            <!-- 透明度设置 -->
+            <g transform="translate(24, 280)">
+                <text x="0" y="0" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">透明度</text>
+                <rect x="0" y="30" width="312" height="4" rx="2" fill="#E5E5E5"/>
+                <circle cx="156" cy="32" r="12" fill="#0071E3"/>
+                <text x="332" y="38" font-family="SF Pro Display" font-size="14" fill="#86868B">50%</text>
+            </g>
+            
+            <!-- 旋转角度 -->
+            <g transform="translate(24, 340)">
+                <text x="0" y="0" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">旋转角度</text>
+                <rect x="0" y="30" width="312" height="4" rx="2" fill="#E5E5E5"/>
+                <circle cx="156" cy="32" r="12" fill="#0071E3"/>
+                <text x="332" y="38" font-family="SF Pro Display" font-size="14" fill="#86868B">-30°</text>
+            </g>
+            
+            <!-- 应用按钮 -->
+            <g transform="translate(24, 420)">
+                <rect x="0" y="0" width="312" height="48" rx="24" fill="#0071E3"/>
+                <text x="156" y="30" font-family="SF Pro Display" font-size="16" fill="white" text-anchor="middle">应用水印</text>
+            </g>
+        </g>
+    </g>
+    
+    <!-- 滤镜定义 -->
+    <defs>
+        <filter id="shadow" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+        </filter>
+    </defs>
+</svg> 

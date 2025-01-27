@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="1440" height="900" fill="#F5F5F7"/>
+    
+    <!-- 顶部导航栏 -->
+    <rect x="0" y="0" width="1440" height="64" fill="white" filter="url(#shadow)"/>
+    <text x="48" y="40" font-family="SF Pro Display" font-size="24" fill="#000000">工具集</text>
+    
+    <!-- 主要内容区域 -->
+    <g transform="translate(120, 120)">
+        <!-- 标题 -->
+        <text x="0" y="0" font-family="SF Pro Display" font-size="48" fill="#1D1D1F">图片压缩</text>
+        <text x="0" y="40" font-family="SF Pro Display" font-size="20" fill="#86868B">高质量图片压缩，保持清晰度</text>
+        
+        <!-- 上传区域 -->
+        <g transform="translate(0, 100)">
+            <rect x="0" y="0" width="600" height="400" rx="16" fill="white" stroke="#E5E5E5" stroke-width="2" stroke-dasharray="6 6"/>
+            <text x="300" y="180" font-family="SF Pro Display" font-size="24" fill="#86868B" text-anchor="middle">拖拽图片到这里</text>
+            <text x="300" y="220" font-family="SF Pro Display" font-size="20" fill="#86868B" text-anchor="middle">或</text>
+            <!-- 上传按钮 -->
+            <g transform="translate(220, 240)">
+                <rect x="0" y="0" width="160" height="48" rx="24" fill="#0071E3"/>
+                <text x="80" y="30" font-family="SF Pro Display" font-size="16" fill="white" text-anchor="middle">选择图片</text>
+            </g>
+        </g>
+        
+        <!-- 压缩选项 -->
+        <g transform="translate(640, 100)">
+            <text x="0" y="0" font-family="SF Pro Display" font-size="20" fill="#1D1D1F">压缩选项</text>
+            
+            <!-- 质量滑块 -->
+            <g transform="translate(0, 40)">
+                <text x="0" y="20" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">压缩质量</text>
+                <rect x="0" y="40" width="400" height="4" rx="2" fill="#E5E5E5"/>
+                <circle cx="200" cy="42" r="12" fill="#0071E3"/>
+                <text x="420" y="46" font-family="SF Pro Display" font-size="14" fill="#86868B">50%</text>
+            </g>
+            
+            <!-- 最大尺寸选项 -->
+            <g transform="translate(0, 120)">
+                <text x="0" y="20" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">最大尺寸</text>
+                <rect x="0" y="40" width="200" height="48" rx="8" fill="white" stroke="#E5E5E5"/>
+                <text x="16" y="70" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">1920 x 1080</text>
+                <path d="M170 60 L180 70 L190 60" stroke="#86868B" stroke-width="2" fill="none"/>
+            </g>
+            
+            <!-- 压缩按钮 -->
+            <g transform="translate(0, 200)">
+                <rect x="0" y="0" width="160" height="48" rx="24" fill="#0071E3"/>
+                <text x="80" y="30" font-family="SF Pro Display" font-size="16" fill="white" text-anchor="middle">开始压缩</text>
+            </g>
+        </g>
+        
+        <!-- 预览区域 -->
+        <g transform="translate(0, 540)">
+            <text x="0" y="0" font-family="SF Pro Display" font-size="20" fill="#1D1D1F">压缩预览</text>
+            <g transform="translate(0, 40)">
+                <!-- 原图 -->
+                <g>
+                    <text x="0" y="0" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">原图 (2.5MB)</text>
+                    <rect x="0" y="20" width="300" height="200" rx="8" fill="white" stroke="#E5E5E5"/>
+                </g>
+                <!-- 压缩后 -->
+                <g transform="translate(340, 0)">
+                    <text x="0" y="0" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">压缩后 (约0.8MB)</text>
+                    <rect x="0" y="20" width="300" height="200" rx="8" fill="white" stroke="#E5E5E5"/>
+                </g>
+            </g>
+        </g>
+    </g>
+    
+    <!-- 滤镜定义 -->
+    <defs>
+        <filter id="shadow" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+        </filter>
+    </defs>
+</svg> 

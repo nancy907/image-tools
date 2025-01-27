@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片裁剪 - 在线工具集</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tools.css">
+    <link rel="stylesheet" href="../css/image-crop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav">
+            <a href="../index.html" class="logo">工具集</a>
+        </nav>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main">
+        <div class="container">
+            <!-- 标题区域 -->
+            <section class="tool-header">
+                <h1>图片裁剪</h1>
+                <p>自由调整图片尺寸和比例</p>
+            </section>
+
+            <!-- 上传区域 -->
+            <section class="upload-area" id="dropZone">
+                <div class="upload-content">
+                    <div class="upload-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 32V16M24 16L18 22M24 16L30 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="4" y="4" width="40" height="40" rx="20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>拖拽图片到这里</h3>
+                    <p>或</p>
+                    <button class="button" id="fileSelect">选择图片</button>
+                    <input type="file" id="fileInput" hidden accept="image/*">
+                </div>
+            </section>
+
+            <!-- 裁剪区域 -->
+            <section class="crop-container" hidden>
+                <div class="crop-area">
+                    <img id="cropImage" src="" alt="待裁剪图片">
+                </div>
+
+                <!-- 裁剪工具栏 -->
+                <div class="crop-toolbar">
+                    <!-- 比例选择 -->
+                    <div class="tool-group">
+                        <label>裁剪比例</label>
+                        <select id="aspectRatio" class="input">
+                            <option value="free">自由比例</option>
+                            <option value="1">1:1 (正方形)</option>
+                            <option value="1.7778">16:9 (宽屏)</option>
+                            <option value="1.3333">4:3 (标准)</option>
+                            <option value="0.5625">9:16 (竖屏)</option>
+                        </select>
+                    </div>
+
+                    <!-- 尺寸输入 -->
+                    <div class="tool-group size-inputs">
+                        <label>尺寸</label>
+                        <div class="size-group">
+                            <input type="number" id="cropWidth" class="input" placeholder="宽度">
+                            <span>x</span>
+                            <input type="number" id="cropHeight" class="input" placeholder="高度">
+                        </div>
+                    </div>
+
+                    <!-- 旋转工具 -->
+                    <div class="tool-group">
+                        <label>旋转</label>
+                        <div class="rotate-buttons">
+                            <button class="button" id="rotateLeft" title="向左旋转90度">↺</button>
+                            <button class="button" id="rotateRight" title="向右旋转90度">↻</button>
+                        </div>
+                    </div>
+
+                    <!-- 缩放工具 -->
+                    <div class="tool-group">
+                        <label>缩放</label>
+                        <div class="zoom-buttons">
+                            <button class="button" id="zoomOut" title="缩小">-</button>
+                            <button class="button" id="zoomIn" title="放大">+</button>
+                        </div>
+                    </div>
+
+                    <!-- 重置按钮 -->
+                    <button class="button" id="resetCrop">重置</button>
+                </div>
+
+                <!-- 确认按钮 -->
+                <button class="button primary-button" id="confirmCrop">确认裁剪</button>
+            </section>
+
+            <!-- 预览区域 -->
+            <section class="preview-section" hidden>
+                <h3>裁剪预览</h3>
+                <div class="preview-container">
+                    <img id="previewImage" alt="裁剪预览">
+                </div>
+                <div class="preview-info">
+                    <span id="previewDimensions">0 x 0</span>
+                    <button class="button" id="downloadButton">下载裁剪后的图片</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/image-crop.js"></script>
+</body>
+</html> 

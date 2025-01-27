@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件转换 - 在线工具集</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tools.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav">
+            <a href="../index.html" class="logo">工具集</a>
+        </nav>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main">
+        <div class="container">
+            <!-- 标题区域 -->
+            <section class="tool-header">
+                <h1>文件转换</h1>
+                <p>支持多种文件格式转换</p>
+            </section>
+
+            <!-- 上传区域 -->
+            <section class="upload-area" id="dropZone">
+                <div class="upload-content">
+                    <div class="upload-icon">
+                        <!-- 上传图标 -->
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 32V16M24 16L18 22M24 16L30 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="4" y="4" width="40" height="40" rx="20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>拖拽文件到这里</h3>
+                    <p>或</p>
+                    <button class="button" id="fileSelect">选择文件</button>
+                    <input type="file" id="fileInput" hidden>
+                </div>
+            </section>
+
+            <!-- 转换选项 -->
+            <section class="convert-options">
+                <h2>转换选项</h2>
+                <div class="option-group">
+                    <label for="targetFormat">目标格式</label>
+                    <select id="targetFormat" class="input">
+                        <option value="pdf">PDF</option>
+                        <option value="doc">DOC</option>
+                        <option value="docx">DOCX</option>
+                        <option value="txt">TXT</option>
+                    </select>
+                </div>
+                <button class="button convert-button" id="convertButton" disabled>开始转换</button>
+            </section>
+
+            <!-- 转换进度 -->
+            <section class="convert-progress" hidden>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="progress-text">正在转换...</p>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/file-convert.js"></script>
+</body>
+</html> 

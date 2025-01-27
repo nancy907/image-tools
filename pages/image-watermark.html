@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片水印 - 在线工具集</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tools.css">
+    <link rel="stylesheet" href="../css/image-watermark.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav">
+            <a href="../index.html" class="logo">工具集</a>
+        </nav>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main">
+        <div class="container">
+            <!-- 标题区域 -->
+            <section class="tool-header">
+                <h1>图片水印</h1>
+                <p>为图片添加文字或图片水印</p>
+            </section>
+
+            <!-- 上传区域 -->
+            <section class="upload-area" id="dropZone">
+                <div class="upload-content">
+                    <div class="upload-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 32V16M24 16L18 22M24 16L30 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="4" y="4" width="40" height="40" rx="20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>拖拽图片到这里</h3>
+                    <p>或</p>
+                    <button class="button" id="fileSelect">选择图片</button>
+                    <input type="file" id="fileInput" hidden accept="image/*">
+                </div>
+            </section>
+
+            <!-- 水印编辑区域 -->
+            <section class="watermark-editor" hidden>
+                <div class="editor-layout">
+                    <!-- 预览区域 -->
+                    <div class="preview-area">
+                        <div class="preview-container" id="previewContainer">
+                            <img id="sourcePreview" alt="图片预览">
+                            <div id="watermarkLayer" class="watermark-layer"></div>
+                        </div>
+                    </div>
+
+                    <!-- 水印设置面板 -->
+                    <div class="settings-panel">
+                        <!-- 水印列表 -->
+                        <div class="panel-section">
+                            <div class="section-header">
+                                <h3>水印列表</h3>
+                                <button class="button small" id="addWatermark">添加水印</button>
+                            </div>
+                            <div class="watermark-list" id="watermarkList">
+                                <!-- 水印项模板 -->
+                                <div class="watermark-item active" data-id="1">
+                                    <div class="item-header">
+                                        <span class="item-title">水印 1</span>
+                                        <div class="item-actions">
+                                            <button class="icon-button" data-action="edit">✎</button>
+                                            <button class="icon-button" data-action="delete">×</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 当前水印设置 -->
+                        <div class="panel-section" id="watermarkSettings">
+                            <div class="section-header">
+                                <h3>水印设置</h3>
+                            </div>
+                            <div class="watermark-type">
+                                <button class="button active" id="textType">文字水印</button>
+                                <button class="button" id="imageType">图片水印</button>
+                            </div>
+
+                            <!-- 文字水印设置 -->
+                            <div class="panel-section" id="textSettings">
+                                <div class="setting-item">
+                                    <label>水印文字</label>
+                                    <input type="text" id="watermarkText" class="input" placeholder="输入水印文字">
+                                </div>
+                                <div class="setting-item">
+                                    <label>字体大小</label>
+                                    <input type="range" id="fontSize" min="12" max="72" value="24" class="slider">
+                                    <span class="value-display">24px</span>
+                                </div>
+                                <div class="setting-item">
+                                    <label>字体颜色</label>
+                                    <input type="color" id="textColor" value="#000000">
+                                </div>
+                            </div>
+
+                            <!-- 图片水印设置 -->
+                            <div class="panel-section" id="imageSettings" hidden>
+                                <div class="setting-item">
+                                    <label>上传水印图片</label>
+                                    <button class="button" id="watermarkImageSelect">选择图片</button>
+                                    <input type="file" id="watermarkImageInput" hidden accept="image/*">
+                                </div>
+                                <div class="setting-item">
+                                    <label>图片大小</label>
+                                    <input type="range" id="imageSize" min="10" max="100" value="50" class="slider">
+                                    <span class="value-display">50%</span>
+                                </div>
+                            </div>
+
+                            <!-- 通用设置 -->
+                            <div class="panel-section">
+                                <div class="setting-item">
+                                    <label>不透明度</label>
+                                    <input type="range" id="opacity" min="1" max="100" value="50" class="slider">
+                                    <span class="value-display">50%</span>
+                                </div>
+                                <div class="setting-item">
+                                    <label>平铺设置</label>
+                                    <div class="tile-settings">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="enableTiling">
+                                            启用平铺
+                                        </label>
+                                        <div class="tile-options" hidden>
+                                            <div class="setting-item">
+                                                <label>水平间距</label>
+                                                <input type="range" id="tileSpacingX" min="50" max="300" value="150" class="slider">
+                                                <span class="value-display">150px</span>
+                                            </div>
+                                            <div class="setting-item">
+                                                <label>垂直间距</label>
+                                                <input type="range" id="tileSpacingY" min="50" max="300" value="150" class="slider">
+                                                <span class="value-display">150px</span>
+                                            </div>
+                                            <div class="setting-item">
+                                                <label>错位效果</label>
+                                                <input type="range" id="tileOffset" min="0" max="100" value="0" class="slider">
+                                                <span class="value-display">0%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <label>位置</label>
+                                    <div class="position-grid">
+                                        <button data-position="top-left">↖</button>
+                                        <button data-position="top-center">↑</button>
+                                        <button data-position="top-right">↗</button>
+                                        <button data-position="middle-left">←</button>
+                                        <button data-position="middle-center">○</button>
+                                        <button data-position="middle-right">→</button>
+                                        <button data-position="bottom-left">↙</button>
+                                        <button data-position="bottom-center">↓</button>
+                                        <button data-position="bottom-right">↘</button>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <label>旋转角度</label>
+                                    <input type="range" id="rotation" min="-180" max="180" value="0" class="slider">
+                                    <span class="value-display">0°</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 操作按钮 -->
+                <div class="action-buttons">
+                    <button class="button" id="resetButton">重置</button>
+                    <button class="button primary" id="downloadButton">下载</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/image-watermark.js"></script>
+</body>
+</html> 

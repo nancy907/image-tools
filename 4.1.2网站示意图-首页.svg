@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="1440" height="900" fill="#F5F5F7"/>
+    
+    <!-- 顶部导航栏 -->
+    <rect x="0" y="0" width="1440" height="64" fill="white" filter="url(#shadow)"/>
+    <text x="48" y="40" font-family="SF Pro Display" font-size="24" fill="#000000">工具集</text>
+    
+    <!-- 主要内容区域 -->
+    <g transform="translate(120, 120)">
+        <!-- 标题 -->
+        <text x="0" y="0" font-family="SF Pro Display" font-size="48" fill="#1D1D1F">在线工具集</text>
+        <text x="0" y="40" font-family="SF Pro Display" font-size="20" fill="#86868B">简单、快速、高效的在线工具</text>
+        
+        <!-- 工具卡片网格 -->
+        <g transform="translate(0, 100)">
+            <!-- 文件转换卡片 -->
+            <g class="tool-card">
+                <rect x="0" y="0" width="280" height="200" rx="16" fill="white" filter="url(#card-shadow)"/>
+                <text x="24" y="40" font-family="SF Pro Display" font-size="24" fill="#000000">文件转换</text>
+                <text x="24" y="70" font-family="SF Pro Display" font-size="16" fill="#86868B">支持多种格式转换</text>
+            </g>
+            
+            <!-- 图片压缩卡片 -->
+            <g class="tool-card" transform="translate(320, 0)">
+                <rect x="0" y="0" width="280" height="200" rx="16" fill="white" filter="url(#card-shadow)"/>
+                <text x="24" y="40" font-family="SF Pro Display" font-size="24" fill="#000000">图片压缩</text>
+                <text x="24" y="70" font-family="SF Pro Display" font-size="16" fill="#86868B">高质量压缩</text>
+            </g>
+            
+            <!-- 图片裁剪卡片 -->
+            <g class="tool-card" transform="translate(640, 0)">
+                <rect x="0" y="0" width="280" height="200" rx="16" fill="white" filter="url(#card-shadow)"/>
+                <text x="24" y="40" font-family="SF Pro Display" font-size="24" fill="#000000">图片裁剪</text>
+                <text x="24" y="70" font-family="SF Pro Display" font-size="16" fill="#86868B">自由裁剪调整</text>
+            </g>
+            
+            <!-- 第二行卡片 -->
+            <g transform="translate(0, 240)">
+                <!-- 图片格式转换卡片 -->
+                <g class="tool-card">
+                    <rect x="0" y="0" width="280" height="200" rx="16" fill="white" filter="url(#card-shadow)"/>
+                    <text x="24" y="40" font-family="SF Pro Display" font-size="24" fill="#000000">格式转换</text>
+                    <text x="24" y="70" font-family="SF Pro Display" font-size="16" fill="#86868B">支持主流图片格式</text>
+                </g>
+                
+                <!-- 图片水印卡片 -->
+                <g class="tool-card" transform="translate(320, 0)">
+                    <rect x="0" y="0" width="280" height="200" rx="16" fill="white" filter="url(#card-shadow)"/>
+                    <text x="24" y="40" font-family="SF Pro Display" font-size="24" fill="#000000">图片水印</text>
+                    <text x="24" y="70" font-family="SF Pro Display" font-size="16" fill="#86868B">自定义水印效果</text>
+                </g>
+            </g>
+        </g>
+    </g>
+    
+    <!-- 滤镜定义 -->
+    <defs>
+        <filter id="shadow" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+        </filter>
+        <filter id="card-shadow" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.1"/>
+        </filter>
+    </defs>
+</svg> 

@@ -1,0 +1,142 @@
+/* 工具页面标题 */
+.tool-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tool-header h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.tool-header p {
+    font-size: 20px;
+    color: var(--text-secondary);
+}
+
+/* 上传区域 */
+.upload-area {
+    background-color: var(--white);
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 40px;
+    margin-bottom: 40px;
+    transition: border-color 0.2s;
+}
+
+.upload-area.drag-over {
+    border-color: var(--primary-color);
+    background-color: rgba(0, 113, 227, 0.05);
+}
+
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-secondary);
+}
+
+.upload-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--text-secondary);
+}
+
+.upload-content h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.upload-content p {
+    font-size: 20px;
+}
+
+/* 转换选项 */
+.convert-options {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 24px;
+    margin-bottom: 40px;
+}
+
+.convert-options h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+.option-group {
+    margin-bottom: 24px;
+}
+
+.option-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.convert-button {
+    width: 100%;
+}
+
+.convert-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 进度条 */
+.convert-progress {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 24px;
+    margin-bottom: 40px;
+}
+
+.progress-bar {
+    height: 4px;
+    background-color: var(--border-color);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .tool-header h1 {
+        font-size: 36px;
+    }
+
+    .tool-header p {
+        font-size: 18px;
+    }
+
+    .upload-area {
+        padding: 24px;
+    }
+
+    .upload-content h3 {
+        font-size: 20px;
+    }
+
+    .upload-content p {
+        font-size: 16px;
+    }
+} 

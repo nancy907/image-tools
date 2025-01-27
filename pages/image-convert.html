@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片格式转换 - 在线工具集</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tools.css">
+    <link rel="stylesheet" href="../css/image-convert.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav">
+            <a href="../index.html" class="logo">工具集</a>
+        </nav>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main">
+        <div class="container">
+            <!-- 标题区域 -->
+            <section class="tool-header">
+                <h1>图片格式转换</h1>
+                <p>支持多种图片格式互转</p>
+            </section>
+
+            <!-- 上传区域 -->
+            <section class="upload-area" id="dropZone">
+                <div class="upload-content">
+                    <div class="upload-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 32V16M24 16L18 22M24 16L30 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="4" y="4" width="40" height="40" rx="20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>拖拽图片到这里</h3>
+                    <p>或</p>
+                    <button class="button" id="fileSelect">选择图片</button>
+                    <input type="file" id="fileInput" hidden accept="image/*">
+                </div>
+            </section>
+
+            <!-- 转换选项 -->
+            <section class="convert-options" hidden>
+                <div class="format-flow">
+                    <!-- 源文件信息 -->
+                    <div class="format-box">
+                        <h3>源文件</h3>
+                        <div class="image-preview">
+                            <img id="sourcePreview" alt="源文件预览">
+                        </div>
+                        <div class="format-info">
+                            <span id="sourceFormat">格式: --</span>
+                            <span id="sourceSize">大小: --</span>
+                        </div>
+                    </div>
+
+                    <!-- 转换箭头 -->
+                    <div class="convert-arrow">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M8 24H40M40 24L32 16M40 24L32 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+
+                    <!-- 目标格式选择 -->
+                    <div class="format-box">
+                        <h3>目标格式</h3>
+                        <div class="format-select">
+                            <select id="targetFormat" class="input">
+                                <option value="image/jpeg">JPG</option>
+                                <option value="image/png">PNG</option>
+                                <option value="image/webp">WebP</option>
+                                <option value="image/gif">GIF</option>
+                            </select>
+                        </div>
+                        <div class="quality-control">
+                            <label>
+                                <span>质量</span>
+                                <span class="quality-value">90%</span>
+                            </label>
+                            <input type="range" id="qualitySlider" min="1" max="100" value="90" class="slider">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 转换按钮 -->
+                <button class="button convert-button" id="convertButton">开始转换</button>
+            </section>
+
+            <!-- 转换结果 -->
+            <section class="result-section" hidden>
+                <h3>转换结果</h3>
+                <div class="result-preview">
+                    <img id="resultPreview" alt="转换结果预览">
+                </div>
+                <div class="result-info">
+                    <div class="info-text">
+                        <span id="resultFormat">格式: --</span>
+                        <span id="resultSize">大小: --</span>
+                    </div>
+                    <button class="button" id="downloadButton">下载转换后的图片</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/image-convert.js"></script>
+</body>
+</html> 

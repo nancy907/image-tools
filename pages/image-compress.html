@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩 - 在线工具集</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tools.css">
+    <link rel="stylesheet" href="../css/image-compress.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav">
+            <a href="../index.html" class="logo">工具集</a>
+        </nav>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main">
+        <div class="container">
+            <!-- 标题区域 -->
+            <section class="tool-header">
+                <h1>图片压缩</h1>
+                <p>高质量图片压缩，保持清晰度</p>
+            </section>
+
+            <!-- 上传区域 -->
+            <section class="upload-area" id="dropZone">
+                <div class="upload-content">
+                    <div class="upload-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 32V16M24 16L18 22M24 16L30 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="4" y="4" width="40" height="40" rx="20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>拖拽图片到这里</h3>
+                    <p>或</p>
+                    <button class="button" id="fileSelect">选择图片</button>
+                    <input type="file" id="fileInput" hidden accept="image/*">
+                </div>
+            </section>
+
+            <!-- 压缩选项 -->
+            <section class="compress-options">
+                <h2>压缩选项</h2>
+                
+                <!-- 质量设置 -->
+                <div class="option-group">
+                    <label>
+                        <span>压缩质量</span>
+                        <span class="quality-value">80%</span>
+                    </label>
+                    <div class="slider-container">
+                        <input type="range" id="qualitySlider" min="0" max="100" value="80" class="slider">
+                    </div>
+                </div>
+
+                <!-- 最大尺寸设置 -->
+                <div class="option-group">
+                    <label for="maxWidth">最大宽度</label>
+                    <input type="number" id="maxWidth" class="input" value="1920" min="100" step="100">
+                </div>
+
+                <div class="option-group">
+                    <label for="maxHeight">最大高度</label>
+                    <input type="number" id="maxHeight" class="input" value="1080" min="100" step="100">
+                </div>
+
+                <button class="button compress-button" id="compressButton" disabled>开始压缩</button>
+            </section>
+
+            <!-- 预览区域 -->
+            <section class="preview-section" hidden>
+                <div class="preview-container">
+                    <!-- 原图预览 -->
+                    <div class="preview-box">
+                        <h3>原图</h3>
+                        <div class="image-container">
+                            <img id="originalPreview" alt="原图预览">
+                        </div>
+                        <div class="image-info">
+                            <span id="originalSize">0 KB</span>
+                            <span id="originalDimensions">0 x 0</span>
+                        </div>
+                    </div>
+
+                    <!-- 压缩后预览 -->
+                    <div class="preview-box">
+                        <h3>压缩后</h3>
+                        <div class="image-container">
+                            <img id="compressedPreview" alt="压缩后预览">
+                        </div>
+                        <div class="image-info">
+                            <span id="compressedSize">0 KB</span>
+                            <span id="compressedDimensions">0 x 0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="button download-button" id="downloadButton">下载压缩后的图片</button>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/image-compress.js"></script>
+</body>
+</html> 

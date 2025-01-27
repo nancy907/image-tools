@@ -1,0 +1,284 @@
+/* 编辑器布局 */
+.editor-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+/* 预览区域 */
+.preview-area {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 24px;
+    min-height: 400px;
+}
+
+.preview-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+#sourcePreview {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.watermark-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 设置面板 */
+.settings-panel {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 24px;
+}
+
+.panel-section {
+    margin-bottom: 24px;
+}
+
+.panel-section:last-child {
+    margin-bottom: 0;
+}
+
+.panel-section h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+/* 水印类型选择 */
+.watermark-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.watermark-type .button {
+    padding: 8px;
+}
+
+.watermark-type .button.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* 设置项 */
+.setting-item {
+    margin-bottom: 16px;
+}
+
+.setting-item:last-child {
+    margin-bottom: 0;
+}
+
+.setting-item label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.setting-item .input {
+    width: 100%;
+}
+
+/* 颜色选择器 */
+.setting-item input[type="color"] {
+    width: 100%;
+    height: 40px;
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+}
+
+/* 滑块和值显示 */
+.setting-item .slider {
+    width: calc(100% - 50px);
+    margin-right: 8px;
+}
+
+.value-display {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* 位置网格 */
+.position-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+}
+
+.position-grid button {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+}
+
+.position-grid button:hover {
+    background-color: var(--hover-color);
+}
+
+.position-grid button.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* 操作按钮 */
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .editor-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-area {
+        min-height: 300px;
+    }
+}
+
+/* 水印列表 */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-header h3 {
+    margin-bottom: 0;
+}
+
+.button.small {
+    padding: 4px 12px;
+    font-size: 14px;
+}
+
+.watermark-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.watermark-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.watermark-item:hover {
+    background-color: var(--hover-color);
+}
+
+.watermark-item.active {
+    border-color: var(--primary-color);
+    background-color: var(--hover-color);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-title {
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-button {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 16px;
+}
+
+.icon-button:hover {
+    background-color: var(--white);
+    color: var(--text-primary);
+}
+
+/* 平铺设置 */
+.tile-settings {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-md);
+    padding: 12px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+.tile-options {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+
+.tile-options .setting-item:first-child {
+    margin-top: 0;
+}
+
+.tile-options .setting-item:last-child {
+    margin-bottom: 0;
+} 

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="1440" height="900" fill="#F5F5F7"/>
+    
+    <!-- 顶部导航栏 -->
+    <rect x="0" y="0" width="1440" height="64" fill="white" filter="url(#shadow)"/>
+    <text x="48" y="40" font-family="SF Pro Display" font-size="24" fill="#000000">工具集</text>
+    
+    <!-- 主要内容区域 -->
+    <g transform="translate(120, 120)">
+        <!-- 标题 -->
+        <text x="0" y="0" font-family="SF Pro Display" font-size="48" fill="#1D1D1F">图片裁剪</text>
+        <text x="0" y="40" font-family="SF Pro Display" font-size="20" fill="#86868B">自由调整图片尺寸和比例</text>
+        
+        <!-- 编辑区域 -->
+        <g transform="translate(0, 100)">
+            <!-- 主编辑区 -->
+            <rect x="0" y="0" width="800" height="500" rx="16" fill="white" stroke="#E5E5E5"/>
+            
+            <!-- 裁剪框示意 -->
+            <rect x="200" y="100" width="400" height="300" rx="0" fill="none" stroke="#0071E3" stroke-width="2"/>
+            <circle cx="200" cy="100" r="6" fill="white" stroke="#0071E3" stroke-width="2"/>
+            <circle cx="600" cy="100" r="6" fill="white" stroke="#0071E3" stroke-width="2"/>
+            <circle cx="200" cy="400" r="6" fill="white" stroke="#0071E3" stroke-width="2"/>
+            <circle cx="600" cy="400" r="6" fill="white" stroke="#0071E3" stroke-width="2"/>
+            
+            <!-- 网格线 -->
+            <path d="M333 100 L333 400" stroke="#0071E3" stroke-width="1" stroke-dasharray="4 4"/>
+            <path d="M467 100 L467 400" stroke="#0071E3" stroke-width="1" stroke-dasharray="4 4"/>
+            <path d="M200 200 L600 200" stroke="#0071E3" stroke-width="1" stroke-dasharray="4 4"/>
+            <path d="M200 300 L600 300" stroke="#0071E3" stroke-width="1" stroke-dasharray="4 4"/>
+        </g>
+        
+        <!-- 工具栏 -->
+        <g transform="translate(0, 620)">
+            <!-- 比例选择 -->
+            <g>
+                <text x="0" y="0" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">裁剪比例</text>
+                <rect x="0" y="20" width="160" height="48" rx="24" fill="white" stroke="#E5E5E5"/>
+                <text x="20" y="48" font-family="SF Pro Display" font-size="14" fill="#1D1D1F">自由比例</text>
+                <path d="M130 44 L140 34 L150 44" stroke="#86868B" stroke-width="2" fill="none"/>
+            </g>
+            
+            <!-- 尺寸输入 -->
+            <g transform="translate(180, 0)">
+                <text x="0" y="0" font-family="SF Pro Display" font-size="16" fill="#1D1D1F">尺寸</text>
+                <rect x="0" y="20" width="100" height="48" rx="8" fill="white" stroke="#E5E5E5"/>
+                <text x="20" y="48" font-family="SF Pro Display" font-size="14" fill="#1D1D1F">400</text>
+                <text x="110" y="48" font-family="SF Pro Display" font-size="14" fill="#1D1D1F">x</text>
+                <rect x="130" y="20" width="100" height="48" rx="8" fill="white" stroke="#E5E5E5"/>
+                <text x="150" y="48" font-family="SF Pro Display" font-size="14" fill="#1D1D1F">300</text>
+            </g>
+            
+            <!-- 旋转按钮 -->
+            <g transform="translate(350, 20)">
+                <rect x="0" y="0" width="48" height="48" rx="24" fill="white" stroke="#E5E5E5"/>
+                <path d="M12 24 A12 12 0 1 1 24 36" stroke="#1D1D1F" stroke-width="2" fill="none"/>
+                <path d="M24 36 L28 36 L24 32" stroke="#1D1D1F" stroke-width="2" fill="none"/>
+            </g>
+            
+            <!-- 确认按钮 -->
+            <g transform="translate(640, 20)">
+                <rect x="0" y="0" width="160" height="48" rx="24" fill="#0071E3"/>
+                <text x="80" y="30" font-family="SF Pro Display" font-size="16" fill="white" text-anchor="middle">确认裁剪</text>
+            </g>
+        </g>
+    </g>
+    
+    <!-- 滤镜定义 -->
+    <defs>
+        <filter id="shadow" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+        </filter>
+    </defs>
+</svg> 
